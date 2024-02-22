@@ -1,40 +1,49 @@
-def add(x, y):
-    """Функція додавання"""
-    return x + y
+def add(a, b):
+    """
+    Функція для додавання двох чисел.
 
-def subtract(x, y):
-    """Функція віднімання"""
-    return x - y
+    >>> add(2, 3)
+    5
+    >>> add(-1, 1)
+    0
+    """
+    return a + b
 
-def multiply(x, y):
-    """Функція множення"""
-    return x * y
+def subtract(a, b):
+    """
+    Функція для віднімання одного числа від іншого.
 
-def divide(x, y):
-    """Функція ділення"""
-    if y == 0:
-        return "Ділення на нуль!"
-    else:
-        return x / y
+    >>> subtract(5, 2)
+    3
+    >>> subtract(10, 5)
+    5
+    """
+    return a - b
 
-print("Виберіть операцію:")
-print("1. Додавання")
-print("2. Віднімання")
-print("3. Множення")
-print("4. Ділення")
+def multiply(a, b):
+    """
+    Функція для множення двох чисел.
 
-choice = input("Введіть номер операції (1/2/3/4): ")
+    >>> multiply(3, 4)
+    12
+    >>> multiply(-2, 5)
+    -10
+    """
+    return a * b
 
-num1 = float(input("Введіть перше число: "))
-num2 = float(input("Введіть друге число: "))
+def divide(a, b):
+    """
+    Функція для ділення одного числа на інше.
 
-if choice == '1':
-    print(num1, "+", num2, "=", add(num1, num2))
-elif choice == '2':
-    print(num1, "-", num2, "=", subtract(num1, num2))
-elif choice == '3':
-    print(num1, "*", num2, "=", multiply(num1, num2))
-elif choice == '4':
-    print(num1, "/", num2, "=", divide(num1, num2))
-else:
-    print("Некоректний вибір операції")
+    >>> divide(10, 2)
+    5.0
+    >>> divide(8, 4)
+    2.0
+    """
+    if b == 0:
+        raise ValueError("Ділення на нуль неможливе")
+    return a / b
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
